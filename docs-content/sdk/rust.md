@@ -27,15 +27,15 @@ slug: rust
       <article className="innerParameterContainer">
         <aside className="innerParameterHeading">options properties</aside>
         <aside className="parameter">
-          <h5>projectID <code>string</code> <code>required</code></h5>
+          <h5>project_id <code>string</code> <code>required</code></h5>
           <p>Your project ID as provided by the [setup page](https://app.highlight.io/setup).</p>
         </aside>
         <aside className="parameter">
-          <h5>serviceName <code>Option&lt;String&gt;</code> <code>optional</code></h5>
+          <h5>service_name <code>Option&lt;String&gt;</code> <code>optional</code></h5>
           <p>The name of your app.</p>
         </aside>
         <aside className="parameter">
-          <h5>serviceVersion <code>Option&lt;String&gt;</code> <code>optional</code></h5>
+          <h5>service_version <code>Option&lt;String&gt;</code> <code>optional</code></h5>
           <p>The version of this app. We recommend setting this to the most recent deploy SHA of your app.</p>
         </aside>
         <aside className="parameter">

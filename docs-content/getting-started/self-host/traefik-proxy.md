@@ -70,7 +70,7 @@ SSL=false  # Disable SSL in Highlight services, let Traefik handle SSL terminati
 
 REACT_APP_PRIVATE_GRAPH_URI=http://backend:8082
 
-REACT_APP_PUBLIC_GRAPH_URI=http://frontend:3000
+ REACT_APP_PUBLIC_GRAPH_URI=http://backend:8082
 
 ```
 

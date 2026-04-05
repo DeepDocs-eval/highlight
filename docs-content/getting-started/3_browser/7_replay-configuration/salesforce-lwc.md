@@ -1,8 +1,8 @@
 ---
 title: Salesforce Lightning Web Components (LWC)
 slug: salesforce-lwc
-createdAt: 2024-06-25T22:55:19.000Z
-updatedAt: 2023-08-22T21:51:00.000Z
+createdAt: 2023-08-22T21:51:00.000Z
+updatedAt: 2024-06-25T22:55:19.000Z
 ---
 
 ## Monitoring and Debugging Salesforce Lightning Web Components (LWC)

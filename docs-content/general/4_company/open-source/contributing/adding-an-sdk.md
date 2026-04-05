@@ -143,15 +143,16 @@ package main
 
 import "github.com/highlight/highlight/sdk/highlight-go"
 
-func RecordLog(log string) {
+func RecordLog(message string) {
 	span, _ := highlight.StartTrace(context.TODO(), "highlight-go/logrus")
 	defer highlight.EndTrace(span)
 
 	attrs := []attribute.KeyValue{
-		LogSeverityKey.String("ERROR"),
-		LogMessageKey.String(entry.Message),
+		attribute.String("log.severity", "ERROR"),
+		attribute.String("log.message", message),
 	}
-	span.AddEvent(highlight.LogEvent, trace.WithAttributes(attrs...))
+	span.AddEvent("log", attrs...)
+}
 }
 
 ```
