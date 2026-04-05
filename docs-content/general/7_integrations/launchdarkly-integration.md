@@ -13,10 +13,8 @@ and to send the LaunchDarkly identification context to your Highlight session.
 Conversely, it will hook into the Highlight SDK and send the user context to LaunchDarkly.
 
 ```typescript
-H.init("<YOUR_PROJECT_ID>", {});
-const ldClient = initialize("<YOUR_LD_CLIENT_TOKEN>");
-H.registerLD(ldClient);
-```
+ H.init("<YOUR_PROJECT_ID>", {integrations: [new LaunchDarklyIntegration(ldClient)]});
+ const ldClient = initialize("<YOUR_LD_CLIENT_TOKEN>");
 
 ## Events forwarded to LaunchDarkly Client
 
@@ -33,10 +31,7 @@ to represent the initialization of a session.
 
 Calling [`H.track()`](../../sdk/client.md#Htrack) will forward the data to LaunchDarkly's `track()` as a `$ld:telemetry:track` event. 
 
-### `consumeError()`
-
-Calling [`H.consumeError()`](../../sdk/client.md#Hidentify) will forward the data to LaunchDarkly's `track()` as a `$ld:telemetry:error` event.
-
+ Calling [`H.recordException()`](../../sdk/client.md#HrecordException) will forward the data to LaunchDarkly's `track()` as a `$ld:telemetry:error` event.
 ### `recordMetric()`
 
 Calling [`H.recordMetric()`](../../sdk/client.md#HrecordMetric) will forward the metric value to LaunchDarkly's `track()` as a `$ld:telemetry:metric` event.
@@ -45,9 +40,7 @@ Calling [`H.recordMetric()`](../../sdk/client.md#HrecordMetric) will forward the
 
 ### `ldClient.identify()`
 
-Calling [`ldClient.identify()`](https://launchdarkly.github.io/js-client-sdk/interfaces/LDClient.html#identify) will 
-forward the data to Highlight's `H.identify()`.
-
+ Calling [`ldClient.identify()`](https://launchdarkly.github.io/js-client-sdk/interfaces/LDClient.html#identify) does not forward to Highlight (noop implementation).
 ### `ldClient.variation()`
 
 Calling [`ldClient.variation()`](https://launchdarkly.github.io/js-client-sdk/interfaces/LDClient.html#variation) will 

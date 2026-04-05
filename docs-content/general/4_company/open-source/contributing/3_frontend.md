@@ -2,7 +2,7 @@
 title: Frontend (app.highlight.io)
 slug: frontend
 createdAt: 2023-01-24T20:28:14.000Z
-updatedAt: 2023-01-24T02:07:22.000Z
+updatedAt: 2023-01-24T20:28:14.000Z
 ---
 
 ## Frequently Asked Questions

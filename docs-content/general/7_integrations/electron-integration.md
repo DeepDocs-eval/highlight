@@ -20,7 +20,7 @@ Under the hood, the function will forward the `focus` and `blur` events to y
 mainWindow.on('focus', () => {
     mainWindow.webContents.send('highlight.run', { visible: true });
 });
-window.on('blur', () => {
+mainWindow.on('blur', () => {
     mainWindow.webContents.send('highlight.run', { visible: false });
  });
 ```

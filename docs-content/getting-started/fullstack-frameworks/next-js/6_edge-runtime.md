@@ -26,11 +26,10 @@ Edge runtime instrumentation is identical for both Page Router and App Router.
 
 ```typescript
 // utils/edge-highlight.config.ts:
-import { CONSTANTS } from '../../constants'
 import { EdgeHighlight } from '@highlight-run/next/server'
 
 export const withEdgeHighlight = EdgeHighlight({
-	projectID: CONSTANTS.NEXT_PUBLIC_HIGHLIGHT_PROJECT_ID,
+	HIGHLIGHT_OTLP_ENDPOINT: process.env.HIGHLIGHT_OTLP_ENDPOINT,
 })
 ```
 
@@ -59,15 +58,15 @@ export const runtime = 'edge'
 ```typescript
 // app/edge-page-router-test/route.ts
 import { NextRequest } from 'next/server'
-import { withEdgeHighlight } from '../../utils/edge-highlight.config'
+import { withEdgeHighlight } from '../../utils/edge-highlight.config.ts'
 
 export const GET = withEdgeHighlight(async function GET(request: NextRequest) {
-	console.info('Here: pages/api/edge-page-router-test', request.url)
+	console.info('Here: app/edge-page-router-test', request.url)
 
 	if (request.url.includes('error')) {
-		throw new Error('Error: pages/api/edge-page-router-test (Edge Runtime)')
+		throw new Error('Error: app/edge-page-router-test (Edge Runtime)')
 	} else {
-		return new Response('Success: pages/api/edge-page-router-test')
+			return new Response('Success: app/edge-page-router-test')
 	}
 })
 
@@ -85,7 +84,7 @@ curl http://localhost:3000/api/edge-page-router-test?error
 
 **App Router**
 ```bash
-curl http://localhost:3000/edge-app-router-test?error
+curl http://localhost:3000/edge-page-router-test?error
 ```
 
 ## Related steps

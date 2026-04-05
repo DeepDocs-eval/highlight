@@ -39,7 +39,7 @@ slug: python
       </article>
     </aside>
     <aside className="parameter">
-      <h5>disabled_integrations<code>List[Integration]</code> <code>optional</code></h5>
+<h5>disabled_integrations<code>List[str]</code> <code>optional</code></h5>
       <p>A list of integrations to disable.</p>
       <article className="innerParameterContainer">
         <aside className="innerParameterHeading">Default integrations</aside>
